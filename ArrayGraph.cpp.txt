@@ -1,0 +1,42 @@
+#include"ArrayGraph.h"
+
+ArrayGraph::ArrayGraph()
+{
+	sever origin;
+	origin.number = 0;
+	for (int i = 0; i < 20; i++)
+		origin.name[i] = { 0 };
+	for (int i = 0; i < 20; i++)
+		origin.ip[i] = { 0 };
+	for (int i = 0; i < 200; i++)
+		arcArr[i][i] = maxWeight;
+	for (int j = 0; j < 200; j++)
+		vertexArr[j] = origin;
+	setsize(200);
+}
+
+//初始化为一个无圈图 ，也就是弧矩阵中，主对角线元素都是0   
+ArrayGraph::ArrayGraph(int x)
+{
+	sever origin;
+	origin.number = 0;
+	for (int i = 0; i < 20; i++)
+		origin.name[i] = { 0 };
+	for (int i = 0; i < 20; i++)
+		origin.ip[i] = { 0 };
+	for (int i = 0; i < x; i++)
+		arcArr[i][i] = maxWeight;
+	for (int j = 0; j < x; j++)
+		vertexArr[j] = origin;
+	setsize(x);
+}
+
+void ArrayGraph::setsize(int i)
+{
+	MAXsize = i;
+}
+
+int ArrayGraph::getsize()
+{
+	return MAXsize;
+}
