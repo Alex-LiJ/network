@@ -48,6 +48,10 @@ void creat::ArrayGraph_del_v() {   //删除顶点
 	cin >> a;
 	cout << endl;
 	int n = m.search(a)-1;
+	if (n + 1 == 0) {
+		cout << "该路由器不存在" << endl;
+		return;
+	}
 	int i, j;
 	if (n < 0 || n >= m.getsize()) {
 		cout << "输入错误，链路内没有您要删除的路由器" << endl;
@@ -113,10 +117,18 @@ void creat::ArrayGraph_del()        //删边
 	cout << "请输入路由器1的编号：";
 	cin >> a;
 	a = m.search(a);
+	if (a == 0) {
+		cout << "该路由器不存在" << endl;
+		return;
+	}
 	cout << endl;
 	cout << "请输入路由器2的编号：";
 	cin >> b;
 	b = m.search(b);
+	if (b == 0) {
+		cout << "该路由器不存在" << endl;
+		return;
+	}
 	cout << endl;
 	for (int i = 0; i < m.getsize(); i++) {
 		m.arcArr[a - 1][b - 1] = 0;
