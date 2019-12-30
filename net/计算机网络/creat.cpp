@@ -43,6 +43,7 @@ void creat::ArrayGraph_add()//添加顶点
 }
 
 void creat::ArrayGraph_del_v() {   //删除顶点
+	cout << "高梁" << endl;
 	cout << "你想删除哪个路由器？" << endl;
 	int a;
 	cin >> a;
