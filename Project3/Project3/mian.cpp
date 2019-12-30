@@ -57,6 +57,10 @@ int main() {
 				cin >> number;
 				int a;
 				a = c.getc()->getGraph()->search(number);
+				if (a == 0) {
+					cout << "该路由器不存在" << endl;
+					break;
+				}
 				c.dijkstra(a);
 				break;
 			}
